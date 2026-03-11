@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bench Press Program - TOP SET + BACK-OFF</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="eyebrow">Bench Press Program</div>
+    <h1>TOP SET<br><span>+ BACK-OFF</span></h1>
+    <div class="header-rule">
+      <hr><div class="dot"></div><hr>
+    </div>
+    <p class="subhead">2× per week · Heavy / Volume alternation</p>
+  </header>
+
+  <!-- CALCULATOR -->
+  <div class="calc-section">
+    <div class="calc-label">Your Starting Point</div>
+    <div class="input-row">
+      <div class="input-group">
+        <label>Your 5-Rep Max (lb)</label>
+        <input type="number" id="fiveRM" placeholder="e.g. 185" min="1">
+      </div>
+      <button class="calc-btn">Calculate</button>
+    </div>
+    <div class="results" id="results">
+      <div class="results-title">Your Target Weights</div>
+      <div class="results-grid">
+        <div class="result-card heavy">
+          <div class="r-label">Day A — Top Set</div>
+          <div class="r-weight" id="r-topset">—</div>
+          <div class="r-desc">Your current 5RM</div>
+        </div>
+        <div class="result-card heavy">
+          <div class="r-label">Day A — Back-Offs</div>
+          <div class="r-weight" id="r-backoff">—</div>
+          <div class="r-desc">~90% of top set · 3×6–8</div>
+        </div>
+        <div class="result-card volume">
+          <div class="r-label">Day B — Volume Low</div>
+          <div class="r-weight" id="r-vol-lo">—</div>
+          <div class="r-desc">75% of top set · start here</div>
+        </div>
+        <div class="result-card volume">
+          <div class="r-label">Day B — Volume High</div>
+          <div class="r-weight" id="r-vol-hi">—</div>
+          <div class="r-desc">82% of top set · build to</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE PROGRAM -->
+  <div class="section-head">
+    <span class="s-label">The Program</span><hr>
+  </div>
+
+  <!-- DAY A -->
+  <div class="day-block">
+    <div class="day-header">
+      <span class="day-tag heavy">Day A</span>
+      <span class="day-title">Heavy Day</span>
+    </div>
+
+    <div class="set-row">
+      <div>
+        <div class="col-label">Sets</div>
+        <div class="col-val">1</div>
+      </div>
+      <div>
+        <div class="col-label">Reps</div>
+        <div class="col-val">5</div>
+      </div>
+      <div class="col-desc">
+        <strong>Top Set</strong> — Work up to a heavy 5. Leave 1 rep in the tank. This is your benchmark for the day.
+      </div>
+      <div class="rest-badge">Rest 3–5 min</div>
+    </div>
+
+    <div class="set-row">
+      <div>
+        <div class="col-label">Sets</div>
+        <div class="col-val">3</div>
+      </div>
+      <div>
+        <div class="col-label">Reps</div>
+        <div class="col-val">6–8</div>
+      </div>
+      <div class="col-desc">
+        <strong>Back-Off Sets</strong> — Drop to ~90% of today's top set. Controlled reps, full range. Quality over grind.
+      </div>
+      <div class="rest-badge">Rest 2.5–3 min</div>
+    </div>
+
+    <div class="day-note">
+      <p>If top set hits 5 clean reps with strong back-offs → add +5 lb next heavy day. If you miss 5 reps → repeat the same weight. Three consecutive failures → drop 10 lb and rebuild.</p>
+    </div>
+  </div>
+
+  <!-- DAY B -->
+  <div class="day-block">
+    <div class="day-header">
+      <span class="day-tag volume">Day B</span>
+      <span class="day-title">Volume Day</span>
+    </div>
+
+    <div class="set-row">
+      <div>
+        <div class="col-label">Sets</div>
+        <div class="col-val">4</div>
+      </div>
+      <div>
+        <div class="col-label">Reps</div>
+        <div class="col-val">6–8</div>
+      </div>
+      <div class="col-desc">
+        <strong>Volume Sets</strong> — 75–82% of your most recent top set. Smooth, consistent reps. Build work capacity.
+      </div>
+      <div class="rest-badge">Rest 2–3 min</div>
+    </div>
+
+    <div class="day-note">
+      <p>Once all 4 sets reach 8 clean reps → add +5 lb on the next volume day. This tracks independently from heavy day progression — don't rush it.</p>
+    </div>
+  </div>
+
+  <!-- PROGRESSION RULES -->
+  <div class="section-head">
+    <span class="s-label">Progression Rules</span><hr>
+  </div>
+  <div class="rules-grid">
+    <div class="rule-card">
+      <div class="rule-num">01</div>
+      <div class="rule-title">Top Set Success</div>
+      <div class="rule-desc">Hit 5 clean reps and back-offs feel strong → add +5 lb next heavy session.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">02</div>
+      <div class="rule-title">Top Set Miss</div>
+      <div class="rule-desc">Fail to hit 5 reps → repeat the exact same weight next heavy session. Normal.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">03</div>
+      <div class="rule-title">Stall Reset</div>
+      <div class="rule-desc">3 consecutive failures at the same weight → drop 10 lb and rebuild momentum.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">04</div>
+      <div class="rule-title">Volume Progression</div>
+      <div class="rule-desc">All 4 sets hit 8 reps → +5 lb next volume day. Tracked separately from heavy day.</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>Bench 2× per week &nbsp;·&nbsp; Alternate A → B → A → B &nbsp;·&nbsp; 48+ hrs between sessions</p>
+  </div>
+
+</div>
+
+<script src="js/calculator.js"></script>
+</body>
+</html>

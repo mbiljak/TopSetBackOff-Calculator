@@ -1,0 +1,24 @@
+{
+  "name": "topsetbackoff-calculator",
+  "version": "1.0.0",
+  "description": "A calculator for the TOP SET + BACK-OFF Bench Press training program. Calculates target weights for heavy and volume days based on your 5-rep max.",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "start": "open index.html",
+    "dev": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "bench press",
+    "workout calculator",
+    "strength training",
+    "fitness",
+    "programming"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}
