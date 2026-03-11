@@ -13,6 +13,31 @@ function round5(val) {
 }
 
 /**
+ * Calculates the plates needed per side for a given total weight
+ * @param {number} totalWeight - The total weight to lift
+ * @returns {string} Description of plates to add per side
+ */
+function getPlates(totalWeight) {
+  if (totalWeight < 45) {
+    return "Bar only";
+  }
+  let platesPerSide = (totalWeight - 45) / 2;
+  const available = [45, 35, 25, 10, 5, 2.5];
+  let result = [];
+  for (let plate of available) {
+    let count = Math.floor(platesPerSide / plate);
+    if (count > 0) {
+      result.push(`${count}×${plate} lb`);
+      platesPerSide -= count * plate;
+    }
+  }
+  if (platesPerSide > 0.01) { // floating point tolerance
+    return "Unable to calculate plates";
+  }
+  return result.length > 0 ? result.join(', ') : "Bar only";
+}
+
+/**
  * Calculates and displays target weights based on 5-rep max input
  */
 function calculate() {
@@ -33,9 +58,13 @@ function calculate() {
 
   // Update results in DOM
   document.getElementById('r-topset').textContent = topSet + ' lb';
+  document.getElementById('plates-topset').textContent = getPlates(topSet);
   document.getElementById('r-backoff').textContent = backOff + ' lb';
+  document.getElementById('plates-backoff').textContent = getPlates(backOff);
   document.getElementById('r-vol-lo').textContent = volLo + ' lb';
+  document.getElementById('plates-vol-lo').textContent = getPlates(volLo);
   document.getElementById('r-vol-hi').textContent = volHi + ' lb';
+  document.getElementById('plates-vol-hi').textContent = getPlates(volHi);
 
   // Display results
   document.getElementById('results').classList.add('visible');
